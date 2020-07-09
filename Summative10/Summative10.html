@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+
+<!-- 
+	PgP 3/2/2020 updating MIS202 files to align with other assignments 
+-->
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
+	<script src="../constants.js"></script>
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+	<!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+	<title>MIS202 Summative10</title>
+</head>
+
+
+
+<body class="container-fluid" onload="setVariables()">
+
+	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+		<input name="InstID" id="InstID" value="00617282" type="hidden">
+
+		<h1 class=" text-center">Web Collaboration
+		</h1>
+
+		<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="FirstName">First Name:</label>
+				<input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="LastName">Last Name:</label>
+				<input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="pin">StarID:</label>
+				<input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="email">Email:</label>
+				<input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+			</div>
+		</div>
+
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="semester">Semester:</label>
+				<input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="class">Class:</label>
+				<input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="section">Section:</label>
+				<input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="assignment">Assignment:</label>
+				<input class="form-control" name="assignment" id="assignment" value="Summative10" type="text" readonly="readonly">
+			</div>
+		</div>
+		<!-- -end-Student, class and assignment information-end -->
+
+		<!-- Calculate the correct path for saving the files -->
+		<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+		<div class="col-lg-12 h3 text-danger">
+			550 Points
+            <hr />
+		</div>
+
+		<!-- -start-objectives-start -->
+		<div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+		<div id="Objectives" class=" collapse in col-lg-12">
+
+			<!--Above this line similar except for Assignment number and title   -->
+
+			<p>After completing this assignment you will be able to <strong>use</strong> various software applications to collaborate with others by:</p>
+			<ul>
+				<li>agreeing on a division of work items</li>
+				<li>using web conferencing software to share files</li>
+				<li>using web conferencing software to share desktops</li>
+			</ul>
+			<p>The exercises in this assignment must be done in the order presented.</p>
+			<hr />
+		</div>
+		<!-- -end-objectives-end -->
+
+		<div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+
+		<div id="Overview" class="collapse in  col-lg-12">
+			<p><strong>This assignment requires working with others in this course.</strong></p>
+			<p>You are strongly advised to find seek out and meet with your group members the week before this assignment.  Review these instructions and plan on how you will complete this assignment.</p>
+			<p>The purpose of this assignment is to learn how businesses and other entities can conduct business at a distance using web conferencing and other internet based tools.</p>
+			<p>
+				The internet has provided tools to conduct business in ways not possible 10 years ago. Competitive advantage to a certain extent is based on how fast a business can execute a plan or strategy.
+                <br />
+				The power of web based collaboration should not be overlooked.
+                <br />
+				Becoming adept at collaborating with remotely located colleagues and clients will be expected by most businesses.Some items to consider   are:
+			</p>
+			<ul>
+				<li>Are we using the most effective tool set?</li>
+				<li>Does my business need to update it's technology?</li>
+				<li>What business opportunities may be lost if we do not use web collaboration?</li>
+				<li>What can collaboration technology and software do for our business?</li>
+			</ul>
+			<p>This assignment will explore ways to use web collaboration to simplify and expedite working at a distance. You are encouraged to explore on your own to find additional features that will make your life and present or future jobs easier.</p>
+			<hr />
+		</div>
+
+		<div class=" col-lg-12"><a href="#Preliminary" class="btn btn-info" data-toggle="collapse">Preliminary Instructions</a></div>
+
+		<div id="Preliminary" class="collapse in  col-lg-12">
+
+			<p>
+				Make sure that you have Google Earth Pro Desktop Edition installed-it was used in the last assignment.<br />
+
+				You will be using Google Drive, so make sure you can log into your account.<br />
+				Create a folder "MIS202Summative10" to save your work.<br />
+
+				Important: <strong>Before beginning this assignment you should first review the LinkedIn Learning tutorial from '</strong><a href="https://www.LinkedIn Learning/ArcGIS-tutorials/GIS-Web/162136-2.html" class="bg-info text-white" target="_blank"><strong>GIS on the Web</strong></a><strong>'.
+Review Chapter 1 for background information.
+This assignment is based on Chapter 2-Google Maps Mashups Made Easy.</strong><br />
+				This assignment highlights some of the problem solving skills and software tools you have learned in this course:
+			</p>
+			<ul>
+				<li>Google Sheets</li>
+				<li><a href="https://support.google.com/fusiontables/answer/2571232?hl=en" target="_blank">Google Fusion Tables</a>- going away after 12/3/2019</li>
+				<li>Google Earth Desktop</li>
+				<li>Adobe Connect
+                    <br />
+				</li>
+				<li>General computing and networking skills</li>
+			</ul>
+		</div>
+
+
+		<p><strong>Completing the Project-</strong>Read all instructions before proceeding!</p>
+		<p>You will do all of Chapter 2 of the LinkedIn Learning video.&nbsp; Below is a list of particular items to save, make screen shots, or pdfs, or upload to the D2L Assignment folder.</p>
+
+		<p>
+			Work with Google Drive to complete the first several sections as indicated below.<br />
+
+			<img alt="" src="GoogleMapsMashupsTOC.JPG" class="img-fluid img-responsive img-rounded" />
+		</p>
+
+		<div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Cloud Applications-Google Drive</a></div>
+
+		<div id="Exercise01" class="collapse in  col-lg-12">
+			<p>
+				Each student will do all of the steps.<br />
+				Log into D2L to find your Summative10 group and group members.<br />
+				Then refer to the <a href="https://eprofessor.azurewebsites.net/helpfiles/virtualmeetingrooms.htm" class="bg-info text-white" target="_blank">Meeting Rooms page</a>, and log into the Adobe Connect web conference room that corresponds to your group number.<br />
+				Group members will take turns sharing their screens and showing the group how to do a specific section.<br />
+				Pay close attention to the Lynda videos as you complete your work.<br />
+				<strong>The group decides which student begins the exercise. 
+                    <br />
+					That student opens up a blank PowerPoint presentation and creates a title slide with a title of: Google Map Mashup, and a second slide listing the names of all group members who are present.  Note the PowerPoint will be passed around to the different group members as they step through the exercise.  Make sure you know how to upload and download from the File Share pod.
+				</strong>
+			</p>
+
+			<ol>
+				<li>Google Maps options for map development-With all group members logged into group's meeting room, the first student shares their screen, leads others through the video.  Feel free to also play video on your own computer, if that works better.  This section is for background information. First student uploads powerpoint file to file sharing pod. </li>
+				<li>Mapping through Google Drive- the next student leads the group through the video, and they make sure that everyone installs Fusion Tables on their Google Drive. The student makes a screen shot showing Fusion Tables installe in Google Drive, and adds it to the powerpoint presentation.  </li>
+
+				<li>Geocoding with an address and coordinates-import Gas_stations_GrandRapids.xlsx    file into Google Drive,  and then convert it into a Fusion table, then geocode the addresses, and view them on the map (make a screen shot of fusion table)</li>
+				<li>Merging your data-In your folder create import the Excel spreadsheet "Gas_prices_merge.xlsx" and merge it into Google Drive Spreadsheet file "Gas Prices".  Create a new Fusion Table named "GasPrices" from the imported "Gas_prices_merge" file.  Then merge the original Fusion Table with the "GasPrices" Fusion Table (make a screen shot of merged fusion table)</li>
+				<li>Visualization symbologies-Use 'change feature styles" to create 2 ranges, with red and green icons; modify pop-up windows as indicated, adding $, change cost to price and click any gas station to display the pop-up/info window (make a screen shot of map with red/green icons, zoom to show Grand Rapids area)</li>
+				<li>How to analyze your map-apply the 3.72 to 3.75 filter,; create the line chart, summarize the chart, use cost values, count them, sort by cost, change max categories to 18.(make a screen shot of the resulting chart, showing filter box and configure categorical chart window); </li>
+				<li>Publishing your work-publish, make map visible, to public on the web.<br />
+					Create a new web page with the generated html and javascript code, save the page as <strong>Summative10_GasPrice.html </strong>to your Summative10 web folder.<br />
+				</li>
+			</ol>
+			<h2>Procedural Matters</h2>
+
+			<ol>
+
+				<li>The student doing step 1 creates and shares the initial Google Drive file with all the group members. If there are others in the meeting room, you can use Adobe Connect to share your  screen so that others can see what you are doing.</li>
+				<li>When the student completes step 1, they upload a copy of all files to the Meeting Room, or share them in Google Drive, as appropriate. Save the file with a name such as &quot;Step1&quot;. Do NOT put <a href="https://eprofessor.azurewebsites.net/ProjectVS/WhyNot.htm" class="bg-info text-white" target="_blank">spaces or non standard characters</a> in the file name!  The next person completes the next step, using Adobe Connect to share what they are doing and / or to ask for assistance.</li>
+				<li>Continue in this method until all steps are done. </li>
+				<li>It is advisable to keep notes during this process in order to create the PowerPoint presentation.
+                    <br />
+					It is even smarter to upload a screen shot showing your Google Maps, Sheets and Fusion tables.
+                    <br />
+					Feel free to use One Drive for Business, Google Drive or Adobe Connect to work on the PowerPoint presentation together. </li>
+				<li><strong>The PowerPoint presentation will consist of a title slide listing all group members, and at least 5 others slides containing a screen shot of the Adobe Connect screen taken during each of the six steps.</strong><br />
+					The screen shot would look like the image shown below.<br />
+					You can also create slides 
+      detailing your group work, the Adobe Connect  meeting, the use of Skype, IM, email or any other tool(s) used to complete this project, but that is not required. </li>
+			</ol>
+			<p>
+				<img src="VideoConference.png" alt="Adobe Connect" width="1284" height="726" />
+			</p>
+			<p>&nbsp;</p>
+			<h2><a href="https://umconnect.umn.edu/p92029676/" class="bg-info text-white" target="_blank">Actual Project 3 Video Conference Recording </a></h2>
+			<hr />
+			<h1>Deliverables</h1>
+			<p>
+				Each student will obtain a copy of the completed PowerPoint presentation.
+                <br />
+				Choose an appropriate PowerPoint design.
+			</p>
+			<p>
+				Print the PowerPoint as a pdf
+			</p>
+			<h1>1. (250) WebConfPowerPoint.pdf&nbsp;</h1>
+			<hr />
+			<h2><b>Questions</b></h2>
+			<p><b>(25) 2. What was the most difficult aspect of this assignment? </b></p>
+			<p>
+				<b>
+					<input type="text" name="q2" id="q2" size="120" maxlength="120" value="most difficult:  " />
+				</b>
+			</p>
+			<p>&nbsp;</p>
+			<p><b>(25) 3. What was the most enjoyable aspect of this assignment?</b></p>
+			<p>
+				<b>
+					<input type="text" name="q3" id="q3" size="120" maxlength="120" value="most enjoyable:  " />
+				</b>
+			</p>
+			<p>&nbsp;</p>
+			<p><b>(25) 4. List 4 ways in which businesses can make effective use of collaboration tools.</b></p>
+			<p>
+				<b>
+					<input type="text" name="q4" id="q4" size="120" maxlength="120" value="1.   ; 2.   ; 3.   ; 4.   " />
+				</b>
+			</p>
+			<p>&nbsp;</p>
+			<p><b>(25) 5. Based on your experience with this assignment, list a 'collaboration-centric' issue that businesses and their employees will have to deal with? Briefly explain. </b></p>
+			<p>
+				<b>
+					<input type="text" name="q5" id="q5" size="120" maxlength="120" value="collaboration issue:  " />
+				</b>
+			</p>
+			<hr />
+
+
+
+		</div>
+		<div class="col-lg-12 text-danger">
+			<h2>WebConfPowerPoint&nbsp; Ex1</h2>
+			<hr />
+		</div>
+
+		<!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+		<div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+		<div id="ExercisePDF" class="collapse in  col-lg-12">
+			<p>
+				Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+				Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+				From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                <code><span id="aaPath"></span></code>
+				<script>document.getElementById("aaPath").innerHTML = Path; </script>
+				' folder.<br />
+			</p>
+			<br />
+
+			<p>
+				(50) 6. Save your file 'WebPage.pdf' to the ' 
+                <code><span id="bbPath"></span></code>
+				<script>document.getElementById("bbPath").innerHTML = Path; </script>
+				' folder.<br />
+
+
+			</p>
+
+			<div class="text-danger">
+				<h2>WebPage.pdf</h2>
+				<hr />
+			</div>
+
+			<div class="text-danger">
+			</div>
+
+
+			<p>&nbsp;</p>
+			<p>
+				Use PDFill to merge the WebPage.pdf file with the WebConfPowerPoint.pdf file, and save it as &#39;Summative10.pdf&#39; in ' 
+                  <code><span id="eePath"></span></code>
+				<script>document.getElementById("eePath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+
+			<p>(50) 7. Upload your file 'Summative10.pdf' to the D2L 'Summative10' Assignment folder.</p>
+
+			<div class="text-danger">
+				<h2>Summative10.pdf</h2>
+			</div>
+			<hr />
+
+		</div>
+
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+		<div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+			<p>
+				Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+				Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+			</p>
+
+			(50) 8. Home Page Hyperlink<br />
+			Check and verify that this assignment is hyperlinked on your home page.<br />
+			<br />
+
+			(50) 9. Assignment submission<br />
+			Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+		</div>
+		<hr />
+
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+	</form>
+
+
+
+	<!-- Creative Commons License Info -->
+	<div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+	<div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../../ReadOnly/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>
