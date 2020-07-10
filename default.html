@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
 
+<!--PgP 7/8/2020 updated page. 
+constants.js file now completed in Formative00
+constants.js file controls student information for attendance, email feedback and running assignment submission report. 
+PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+
 <head>
 
 	<title>MIS202 Home Page</title>
@@ -13,6 +18,7 @@
 
 	<!-- specific student constant file that contains firstname, lastname, starid -->
 	<script src="Constants.js"></script>
+
 	<!-- course constant file that contains semester, class, section pages -->
 	<script src="../ReadOnly/CourseConstants.js"></script>
 
@@ -38,7 +44,6 @@
 
 	<div class="col-lg-12">
 
-
 		<form class="container-fluid col-lg-4" action="https://eprofessor.azurewebsites.net/code/SubmitAttendance.asp" method="post" name="frmAttendance" id="frmAttendance">
 
 			<input class="form-control" name="FirstName" id="FirstName3" type="hidden" value="default first name">
@@ -51,9 +56,7 @@
 			<input class="form-control" name="assignment" id="assignment3" value="Attendance" type="hidden">
 			<input name="InstID" id="InstID3" value="00617282" type="hidden">
 
-			<!-- PgP 5/4/2020 attendance not required for online class
 			<input class="text-danger btn-block btn-lg" type="submit" value="Submit Attendance" />
-				-->
 			<hr />
 
 		</form>
@@ -97,99 +100,103 @@
 		<tbody>
 			<tr class="text-center">
 				<th scope="col">Week</th>
-				<th scope="col"><abbr title="check D2L, typically Monday at 7am">Due</abbr></th>
 				<th scope="col">Assignment</th>
+				<th scope="col">Project</th>
 				<th scope="col">Notes</th>
 			</tr>
 			<tr>
 				<td>1</td>
-				<td>5/15/20</td>
-				<td><a href="Summative01/Summative01.html">Summative01</a></td>
+				<td><a href="Formative00/Formative00.html">Formative00</a></td>
+				<td>Project01-<a href="https://eprofessor.azurewebsites.net/Code/EntryFormWebsiteURL.asp" target="_blank">submit url</a></td>
 				<td>&nbsp;</td>
 			</tr>
 			<tr>
 				<td>2</td>
-				<td>5/18/20</td>
-				<td><a href="Summative02/Summative02.html">Summative02</a></td>
+				<td>&nbsp;</td>
+				<td>Project01-no hyperlink</td>
 				<td>&nbsp;</td>
 			</tr>
 			<tr>
-				<td>2</td>
-				<td>5/18/20</td>
-				<td><a href="Summative03/Summative03.html">Summative03</a></td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>5/18/20</td>
-				<td><a href="Summative04/Summative04.html">Summative04</a></td>
+				<td>3</td>
+				<td><a href="#">Summative02</a></td>
+				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td>2&nbsp;</td>
-				<td>5/18/20</td>
-				<td><a href="Summative05/Summative05.html">Summative05</a></td>
+				<td>4</td>
+				<td><a href="#">Summative03</a></td>
+				<td>&nbsp;</td>
 				<td>&nbsp;</td>
 			</tr>
 			<tr>
-				<td>3</td>
-				<td>5/25/20</td>
-				<td><a href="Summative06/Summative06.html">Summative06</a></td>
+				<td>5</td>
+				<td><a href="#">Summative04</a></td>
+				<td>&nbsp;</td>
 				<td></td>
 			</tr>
 			<tr>
-				<td>3</td>
-				<td>5/25/20</td>
-				<td><a href="Summative07/Summative07.html">Summative07</a></td>
+				<td>6</td>
+				<td><a href="#">Summative05</a></td>
+				<td>&nbsp;</td>
 				<td>&nbsp;</td>
 			</tr>
 			<tr>
-				<td>3</td>
-				<td>5/25/20</td>
-				<td><a href="Summative08/Summative08.html">Summative08</a></td>
+				<td>7</td>
+				<td><a href="#">Summative06</a></td>
+				<td>&nbsp;</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td><a href="#">Summative07</a></td>
+				<td>&nbsp;</td>
 				<td>&nbsp;</td>
 			</tr>
 			<tr>
-				<td>3</td>
-				<td>5/25/20</td>
-				<td><a href="Summative09/Summative09.html">Summative09</a></td>
+				<td>9</td>
+				<td><a href="#">Summative08</a></td>
+				<td>&nbsp;</td>
 				<td>&nbsp;</td>
 			</tr>
 			<tr>
-				<td>4</td>
-				<td>6/1/20</td>
-				<td><a href="Summative10/Summative10.html">Summative10</a></td>
-				<td>-deleted</td>
-			</tr>
-			<tr>
-				<td>4</td>
-				<td>6/1/20</td>
-				<td><a href="Summative11/Summative11.html">Summative11</a></td>
+				<td>10</td>
+				<td><a href="#">Summative09</a></td>
+				<td>&nbsp;</td>
 				<td>&nbsp;</td>
 			</tr>
 			<tr>
-				<td>4</td>
-				<td>6/1/20</td>
-				<td><a href="Summative12/Summative12.html">Summative12</a></td>
+				<td>11</td>
+				<td><a href="#">Summative10</a></td>
+				<td>&nbsp;</td>
 				<td>&nbsp;</td>
 			</tr>
 			<tr>
-				<td>4</td>
-				<td>6/1/20</td>
-				<td><a href="Summative13/Summative13.html">Summative13</a></td>
+				<td>12</td>
+				<td><a href="#">Summative11</a></td>
+				<td>&nbsp;</td>
 				<td>&nbsp;</td>
 			</tr>
 			<tr>
+				<td>13</td>
+				<td><a href="#">Summative12</a></td>
 				<td>&nbsp;</td>
 				<td>&nbsp;</td>
-				<td>
-					<br />
-				</td>
+			</tr>
+			<tr>
+				<td>14</td>
+				<td><a href="#">Summative13</a></td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
 				<td>&nbsp;</td>
 			</tr>
 
-			<tr class="blockquote-reverse alert-success">
-				<td>&nbsp;</td>
+			<tr>
+				<td>16</td>
 				<td>&nbsp;</td>
 				<td>&nbsp;</td>
 				<td>&nbsp;</td>
@@ -205,8 +212,12 @@
 		</tbody>
 	</table>
 
-	<hr />
+	<div class="col-lg-12">
+		<p>
+			Assignments are typically due Monday at 7am, actual due dates are in D2L calendar </p>
+	</div>
 
+	<hr />
 
 	<!-- Creative Commons License Info -->
 	<div id="xLicense" class=" col-lg-12 text-muted"></div>
