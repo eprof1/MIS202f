@@ -1,3 +1,9 @@
+PgP 8/2/2020
+* fall 2020 face to face class
+* home page fully scripted, added Project 4 IoT assignments
+* home page contains reminders for LinkedIn Learing assignments
+
+
 PgP 3/4/2020
 * summer 2020 online class
 * updated home page, full scripted to use constants files
