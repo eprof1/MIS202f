@@ -1,7 +1,7 @@
 PgP 8/2/2020
 * fall 2020 face to face class
 * home page fully scripted, added Project 4 IoT assignments
-* home page contains reminders for LinkedIn Learing assignments
+* home page contains reminders for LinkedIn Learning assignments
 
 
 PgP 3/4/2020
