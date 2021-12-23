@@ -1,3 +1,8 @@
+PgP 12/23/2021
+* spring 2022 face to face class
+* revised home page now named HomePage.html
+* include due date column, syllabus link, assignment completion graphic
+
 PgP 8/2/2020
 * fall 2020 face to face class
 * home page fully scripted, added Project 4 IoT assignments
