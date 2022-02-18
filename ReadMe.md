@@ -1,3 +1,6 @@
+PgP 2/18/2022
+* begin updating assignments, correcting errors
+
 PgP 12/23/2021
 * spring 2022 face to face class
 * revised home page now named HomePage.html
