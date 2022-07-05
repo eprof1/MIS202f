@@ -1,6 +1,7 @@
 PgP 6/7/2022
 * fall 2022 face to face class
 * closer linkage between syllabus, D2L, student website
+* added Access form, report exercises back to S7
 
 PgP 2/18/2022
 * begin updating assignments, correcting errors
