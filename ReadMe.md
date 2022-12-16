@@ -1,3 +1,8 @@
+PgP 12/16/2022
+* spring 2023 face to face class
+* corrected S7 Access files
+
+
 PgP 6/7/2022
 * fall 2022 face to face class
 * closer linkage between syllabus, D2L, student website
