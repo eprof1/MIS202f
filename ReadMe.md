@@ -1,3 +1,7 @@
+PgP 7/13/2023
+* fall 2023 face to face class
+* 
+
 PgP 12/16/2022
 * spring 2023 face to face class
 * corrected S7 Access files, add outline to S4 for ppt
