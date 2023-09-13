@@ -1,3 +1,6 @@
+PgP 9/13/2023
+* pdf file creation now has two methods, file explorer to word added due to bug
+
 PgP 7/13/2023
 * fall 2023 face to face class
 * 
