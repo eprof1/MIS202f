@@ -1,3 +1,6 @@
+PgP 5/8/2024
+* add 'studentwebs' hyperlink to homepage.html
+
 PgP 9/13/2023
 * pdf file creation now has two methods, file explorer to word added due to bug
 
