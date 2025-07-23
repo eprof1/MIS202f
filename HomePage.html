@@ -1,120 +1,133 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
-
-<!-- 
-    PgP 5/8/2024 new 'studentwebs' link requires updated courseconstants.js and constants.js    
-    PgP 7/8/2020 updated page. 
-    constants.js file now completed in Formative00
-    constants.js file controls student information for attendance, email feedback and running assignment submission report. 
-    PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course 
-    -->
-
 <head>
-
+    <!--
+        HomePage.html
+        -------------
+        Purpose: Main student dashboard for MIS202, showing personal/course info,
+                 attendance form, and assignment report form.
+        Permissions:
+            - Students: Submit forms
+            - Instructor: Maintains courseConstants.js and this HTML template
+        Dependencies:
+            - /studentWebsiteRootfolder/studentConstants.js      (student editable)
+            - /ReadOnly/courseConstants.js                       (instructor editable)
+            - /ReadOnly/domForms.js                              (logic, instructor editable)
+            - /ReadOnly/bootstrap.css, bootstrap.js, jquery-1.js (UI)
+        Author: Patrick G Paulson + ChatGPT, June 2025
+    -->
     <title>MIS202 Home Page</title>
-    <!-- PgP 2/5/2018  Need to update this page to a real RWD -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap -->
+    <!-- Bootstrap for styling -->
     <link href="../ReadOnly/bootstrap.css" rel="stylesheet">
-
-    <!-- specific student constant file that contains firstname, lastname, starid -->
-    <script src="Constants.js"></script>
-
-    <!-- course constant file that contains semester, class, section pages -->
-    <script src="../ReadOnly/CourseConstants.js"></script>
-
+    <style>
+        body { padding: 20px; }
+    </style>
 </head>
+<body>
+    <!--
+        Heading dynamically populated by domForms.js using courseConstants.js/studentConstants.js.
+        If any required variables are missing, will show "undefined".
+    -->
+    <div id="Heading" class="col-lg-12"></div>
+    <div class="col-lg-12"><hr /></div>
+
+    <!-- ========== Attendance Submission Form ========== -->
+    <form class="container-fluid col-lg-4" action="https://eprofessor.azurewebsites.net/Codex/SubmitAttendance.aspx"
+          method="post" id="frmAttendance" autocomplete="off">
+        <!-- Student & course fields auto-filled by domForms.js -->
+        <input name="FirstName" type="hidden" />
+        <input name="LastName" type="hidden" />
+        <input name="StarID" type="hidden" />
+        <input name="pin" type="hidden" />
+        <input name="email" type="hidden" />
+        <input name="Semester" type="hidden" />
+        <input name="Class" type="hidden" />
+        <input name="Section" type="hidden" />
+        <input name="assignment" value="Attendance" type="hidden" />
+        <input name="InstID" value="00617282" type="hidden" />
+        <input class="text-danger btn-block btn-lg" type="submit" value="Submit Class Attendance" />
+        <!-- Attendance form warning area -->
+        <div id="attendanceWarning"></div>
+    </form>
+    <hr />
+
+    <!-- ========== Assignment Submission Report Form ========== -->
+    <form class="container-fluid col-lg-4"
+          action="https://eprofessor.azurewebsites.net/Codex/Grading/AssignmentSubmissionReport.aspx"
+          method="post" id="frmAssignmentReport" autocomplete="off">
+        <!-- Student & course fields auto-filled by domForms.js -->
+        <input name="FirstName" type="hidden" />
+        <input name="LastName" type="hidden" />
+        <input name="StarID" type="hidden" />
+        <input name="pin" type="hidden" />
+        <input name="Semester" type="hidden" />
+        <input name="Class" type="hidden" />
+        <input name="Section" type="hidden" />
+        <input class="text-danger btn-block btn-lg"  name="Submit" value="Run Assignment Submissions Report" type="submit" />
+        <!-- Assignment report warning area -->
+        <div id="assignmentWarning"></div>
+    </form>
+    <hr />
 
 
+<!-- ========== Student Email Button Link ========== -->
+<div class="container-fluid col-lg-4">
+    <!-- PgP 3/2/2020: JavaScript-generated mailto link for student/instructor contact -->
+    <a id="emailStudentButton" href="#" 
+       class="btn-lg btn-block text-danger text-center"
+        style="border: 1.5px solid #000"; ">
+    </a>
+    <hr />
+</div>
 
-<body class="container-fluid" onload="setVariables()">
 
-    <div id="xHeading" class=" col-lg-12">
-        <script>document.getElementById("xHeading").innerHTML = pageHeading; </script>
-    </div>
-
-
-    <!-- 
-		PgP 2/28/2020 Add separate form to submit attendance		
-		PgP 3/1/2020 Attendance form and new .asp script work nicely, modified courseconstants.js also
-	-->
-
-    <div class="col-lg-12">
+   <!-- 
+    ========== Student Email Hyperlink-Optional ========== 
+    <div class="container-fluid col-lg-4">
+        <div id="emailStudent"></div>
         <hr />
     </div>
-
-    <div class="col-lg-12">
-
-        <form class="container-fluid col-lg-4" action="https://eprofessor.azurewebsites.net/code/SubmitAttendance.asp" method="post" name="frmAttendance" id="frmAttendance">
-
-            <input class="form-control" name="FirstName" id="FirstName3" type="hidden" value="default first name">
-            <input class="form-control" name="LastName" id="LastName3" type="hidden" value="default last name">
-            <input class="form-control" name="pin3" id="pin3" type="hidden" value="default StarID">
-            <input class="form-control" name="email3" id="email3" type="hidden" value="default email address">
-            <input class="form-control" name="semester" id="semester3" type="hidden" value="default">
-            <input class="form-control" name="class" id="class3" value="xClass" type="hidden">
-            <input class="form-control" name="section" id="section3" value="default" type="hidden">
-            <input class="form-control" name="assignment" id="assignment3" value="Attendance" type="hidden">
-            <input name="InstID" id="InstID3" value="00617282" type="hidden">
-
-            <input class="text-danger btn-block btn-lg" type="submit" value="Submit Attendance" />
-            <hr />
-
-        </form>
-
-        <!-- PgP 2/28/2020 End of attendance form  -->
+    -->
 
 
-        <form class="container-fluid col-lg-4" action="https://eprofessor.azurewebsites.net/code/grading/CourseAssignmentSubmissions.asp" method="post" name="frmAssignment" id="frmAssignment">
-
-            <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
-
-            <input class="form-control" name="FirstName" id="FirstName" type="hidden" value="default first name">
-            <input class="form-control" name="LastName" id="LastName" type="hidden" value="default last name">
-            <input class="form-control" name="pin" id="pin" type="hidden" value="default StarID">
-            <input class="form-control" name="email" id="email" type="hidden" value="default email address">
-            <input class="form-control" name="semester" id="semester" type="hidden" value="default">
-            <input class="form-control" name="class" id="class" value="xClass" type="hidden">
-            <input class="form-control" name="section" id="section" value="default" type="hidden">
-            <input class="form-control" name="assignment" id="assignment" value="Attendance" type="hidden">
-            <input name="InstID" id="InstID" value="00617282" type="hidden">
-
-            <!-- -end-Student, class and assignment information-end -->
-            <input class="text-danger btn-block btn-lg" name="Submit" value="Run Assignment Submissions Report" type="submit">
-            <hr />
-
-        </form>
-
-
-        <div class="text-center">
-            <!-- PgP 3/2/2020 below is  Java Script generated mail to link -->
-            <div id="emailStudent"></div>
-            <script>document.getElementById("emailStudent").innerHTML = xMailTo</script>
-            <hr />
-        </div>
-
-    </div>
-
+    <!-- PgP 6;9/2025 old Navigation Links 
     <div class="col-lg-12 h3">
         <a href="https://eprofessor.azurewebsites.net/MIS202/default.asp" class="bg-info text-white" target="_blank">Syllabus</a> &nbsp; &nbsp;
-		<a href="https://winona.learn.minnstate.edu/d2l/home/6722663" class="bg-info text-white" target="_blank">D2L</a> &nbsp; &nbsp;
-		<span id="nwid"></span>
-        <script>
-            document.getElementById("nwid").innerHTML = NetworkUsername
-        </script>  &nbsp; &nbsp;
-
-        <a href="https://github.com" class="bg-info text-white" target="_blank">GitHub</a>
-
-
-
-
+        <a href="https://winona.learn.minnstate.edu/d2l/home/6943677" class="bg-info text-white" target="_blank">D2L</a> &nbsp; &nbsp;
+        <span id="nwid"></span> &nbsp; &nbsp;
+        <a href="https://github.com" class="bg-info text-white" target="_blank">GitHub</a>  &nbsp; &nbsp;
+         <a href="#"  class="bg-info text-white" target="_blank"> AI Assistant</a>
     </div>
+    -->
 
-    <p>
-        Note: Actual Due Dates in D2L Calendar<br />
-    </p>
+    <!-- Navigation Links -->
+<div class="row" style="margin-bottom:1em;">
+  <div class="col-xs-12 text-left">
+    <ul class="list-inline" style="margin-bottom:0;  font-size:2em; width:100%;" >
+      <li style="margin: 0 1.25em;">
+        <a href="https://eprofessor.azurewebsites.net/MIS202/default.asp" class="bg-info text-white" target="_blank">Syllabus</a>
+      </li>
+      <li style="margin: 0 1.25em;">
+        <a href="https://winona.learn.minnstate.edu/d2l/home/6943677" class="bg-info text-white" target="_blank">D2L</a>
+      </li>
+      <li style="margin: 0 1.25em;">
+        <span id="nwid"></span>
+      </li>
+      <li style="margin: 0 1.25em;">
+        <a href="https://github.com" class="bg-info text-white" target="_blank">GitHub</a>
+      </li>
+      <li style="margin: 0 1.25em;">
+        <a href="#" class="bg-info text-white" target="_blank">AI Assistant</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+    <p>Note: Actual Due Dates in D2L Calendar<br /></p>
 
     <table class=" table table-striped table-hover table-sm table-bordered">
 
@@ -123,124 +136,141 @@
                 <th scope="col">Week</th>
                 <th scope="col">Due-Monday</th>
                 <th scope="col"><a href="CreateAssignmentPDFr2.png" target="_blank">Assignment</a></th>
-                <th scope="col"><a href="LinkedInCertificate2i.png" target="_blank">LinkedIn </a> /other</th>
+                <th scope="col"><a href="LinkedInCertificate2i.png" target="_blank">LinkedIn Learning</a></th>
                 <th scope="col">Project</th>
+
             </tr>
+
             <tr>
                 <td>1</td>
-                <td>1/20/25</td>
-                <td><a href="Formative00/Formative00.html">Formative00</a></td>
-                <td><a href="https://eprofessor.azurewebsites.net/MIS202/HPIA/HPIA.html">HPIA</a></td>
+                <td>9/1/25</td>
+                <td><a href="Formative00/Formative00_1.html">Formative00_1</a></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>9/1/25</td>
+                <td><a href="Formative00/Formative00_2.html">Formative00_2</a></td>
+                <td>&nbsp;</td>
                 <td>Project01-<a href="https://eprofessor.azurewebsites.net/Code/EntryFormWebsiteURL.asp" target="_blank" class="bg-info text-white">  url to web db</a></td>
             </tr>
+
+            <tr>
+                <td>1</td>
+                <td>9/1/25</td>
+                <td><a href="Formative00/Formative00_3.html">Formative00_3</a></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+
+
             <tr>
                 <td>2</td>
-                <td>1/27/25</td>
-                <td></td>
+                <td>9/8/25</td>
+                <td>&nbsp;</td>
                 <td>LinkedIn Learning-01</td>
                 <td><a href="https://eprofessor.azurewebsites.net/Project01/default.html#pdf" target="_blank" class="bg-info text-white">Project01</a>-file to D2L</td>
             </tr>
             <tr>
                 <td>3</td>
-                <td>2/3/25</td>
+                <td>9/15/25</td>
                 <td>Summative02 </td>
                 <td>LinkedIn Learning-02</td>
-                <td></td>
+                <td>&nbsp; </td>
+
             </tr>
             <tr>
                 <td>4</td>
-                <td>2/10/25</td>
+                <td>9/22/25</td>
                 <td>Summative03</td>
                 <td>LinkedIn Learning-03</td>
                 <td>Project04-IOT00</td>
+
             </tr>
             <tr>
                 <td>5</td>
-                <td>2/17/25</td>
+                <td>9/29/25</td>
                 <td>Summative04</td>
                 <td>LinkedIn Learning-04</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>6</td>
-                <td>2/24/25</td>
+                <td>10/6/25</td>
                 <td>Summative05</td>
                 <td>LinkedIn Learning-05</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>7</td>
-                <td>3/3/25</td>
-                <td>Summative06</td>
+                <td>10/13/25</td>
+                <td>&nbsp;</td>
                 <td>LinkedIn Learning-06</td>
                 <td>Project04-IOT01</td>
             </tr>
             <tr>
-                <td  >8</td>
-                <td  >3/10/25</td>
-                <td  >Summative07</td>
-                <td  >LinkedIn Learning-07</td>
-                <td  >Project04-IOT02</td>
+                <td>8</td>
+                <td>10/20/25</td>
+                <td>Summative06</td>
+                <td>LinkedIn Learning-IoT</td>
+                <td>Project04-IOT02</td>
             </tr>
             <tr>
                 <td>9</td>
-                <td>&nbsp;</td>
-                <td class=text-center colspan="2">SPRING &nbsp; BREAK</td>
+                <td>10/27/25</td>
+                <td>Summative07</td>
+                <td>LinkedIn Learning-07</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>10</td>
-                <td>3/24/25</td>
+                <td>11/3/25</td>
                 <td>Summative08</td>
                 <td>LinkedIn Learning-08</td>
                 <td>Project04-IOT03</td>
             </tr>
             <tr>
                 <td>11</td>
-                <td>3/31/25</td>
+                <td>11/10/25</td>
                 <td>Summative09</td>
                 <td>LinkedIn Learning-09</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>12</td>
-                <td>4/7/25</td>
+                <td>11/17/25</td>
                 <td>Summative10</td>
-                <td>LinkedIn Learning-IoT</td>
+                <td>&nbsp;</td>
                 <td>Project04-IOT12</td>
             </tr>
             <tr>
                 <td>13</td>
-                <td>4/14/25</td>
+                <td>11/24/25</td>
                 <td>Summative11</td>
                 <td>LinkedIn Learning-11</td>
                 <td>Project04-IOT16</td>
             </tr>
             <tr>
                 <td>14</td>
-                <td>4/21/25</td>
+                <td>12/1/25</td>
                 <td>Summative12</td>
                 <td>LinkedIn Learning-12</td>
                 <td>Project04-IOT13</td>
             </tr>
             <tr>
                 <td>15</td>
-                <td>4/28/25</td>
-                <td>Summative13</td>
-                <td>LinkedIn Learning-13</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td  >16</td>
-                <td  >5/5/25</td>
-                <td  >GenerativeAI<br />
+                <td>12/8/25</td>
+                <td>Summative13<br />
+                    GenerativeAI<br />
                 </td>
-                <td  ></td>
-                <td  ></td>
+                <td>LinkedIn Learning-13</td>
+                <td></td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td>5/5/25</td>
+                <td>12/8/25</td>
                 <td>LateWork</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -252,27 +282,43 @@
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
+                <td>&nbsp; </td>
             </tr>
 
 
         </tbody>
     </table>
 
-
     <hr />
 
-    <!-- Creative Commons License Info -->
-    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
 
-    <div id="xfooter" class=" col-lg-12 text-muted"></div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- ========== Script Includes (Order is Critical) ========== -->
     <script src="../ReadOnly/jquery-1.js"></script>
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../ReadOnly/bootstrap.js"></script>
+    <script src="studentConstants.js"></script>
+    <script src="../ReadOnly/courseConstants.js"></script>
+    <script src="../ReadOnly/domForms.js"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var f = document.forms["frmAssignment"];
+    if (f && f.elements["email"]) {
+        console.log("Email field before:", f.elements["email"].value);
+        console.log("studentEmailAddress:", typeof studentEmailAddress, studentEmailAddress);
+        f.elements["email"].value = typeof studentEmailAddress !== "undefined" ? studentEmailAddress : "undefined";
+        console.log("Email field after:", f.elements["email"].value);
+    } else {
+        console.log("frmAssignment or email field not found");
+    }
+});
+</script>
+
 
 
 </body>
-
 </html>
