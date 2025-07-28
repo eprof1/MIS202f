@@ -1,3 +1,8 @@
+PgP 7/28/2025
+* revised Summative assignment structure, improve javascript code, avoid race conditions, simplify html
+* split constants out from code in js
+* added Copilot Agent to class
+
 PgP 5/8/2024
 * add 'studentwebs' hyperlink to homepage.html
 
