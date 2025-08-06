@@ -1,0 +1,179 @@
+/*
+    styles.css
+    ----------
+    Purpose: Provides a dramatic and professional theme for course assignment pages.
+    Inspired by the "CSS Zen Garden" concept for easy theming.
+    Author: PgP and Gemini, 8/6/2025
+*/
+
+/* --- CSS Variables for Easy Theming --- */
+:root {
+    --primary-color: #3B82F6; /* A vibrant blue for key actions */
+    --secondary-color: #A855F7; /* A rich purple for accents */
+    --background-dark: #111827; /* Deep, near-black for background */
+    --background-light: #1F2937; /* Lighter shade for cards */
+    --text-primary: #F9FAFB; /* Off-white for readability */
+    --text-secondary: #9CA3AF; /* Muted gray for secondary text */
+    --border-color: #374151;
+    --warning-text: #FBBF24;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* --- General Body and Typography --- */
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+}
+
+/* --- Hero Section for a dramatic entry --- */
+.hero-banner {
+    padding: 5rem 1.5rem;
+    text-align: center;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1559496417-e7f25cb247f3?q=80&w=2564&auto=format&fit=crop') no-repeat center center;
+    background-size: cover;
+    border-bottom: 5px solid var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+    .hero-banner h1 {
+        font-family: var(--font-heading);
+        font-size: 3.5rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+/* --- Styling for content sections to make them pop --- */
+.content-section {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+    .content-section:hover {
+        transform: translateY(-5px);
+    }
+
+    .content-section .card-body, .accordion-body {
+        padding: 2rem;
+        background-color: var(--background-light);
+    }
+
+/* --- Enhanced Form Styling --- */
+.form-control[readonly] {
+    background-color: #374151;
+    color: var(--text-secondary);
+    border-color: #4B5563;
+}
+
+label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+textarea.form-control {
+    background-color: #2b3749;
+    color: var(--text-primary);
+    border-color: #4B5563;
+    min-height: 120px;
+}
+
+    textarea.form-control:focus {
+        background-color: #374151;
+        color: var(--text-primary);
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25);
+    }
+
+/* --- Accordion (Collapse) Styling --- */
+.accordion-item {
+    background-color: transparent;
+    border: none;
+}
+
+.accordion-header button {
+    width: 100%;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 5px !important;
+    font-size: 1.2rem;
+    font-family: var(--font-heading);
+    transition: all 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .accordion-header button:not(.collapsed) {
+        box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        color: white;
+        background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    }
+
+    .accordion-header button::after { /* Remove default Bootstrap icon */
+        display: none;
+    }
+
+.accordion-icon {
+    transition: transform 0.3s;
+}
+
+.accordion-header button:not(.collapsed) .accordion-icon {
+    transform: rotate(90deg);
+}
+
+/* --- Primary Submit Button --- */
+.btn-submit {
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border: none;
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+    .btn-submit:hover {
+        color: white;
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+        transform: scale(1.02);
+    }
+
+/* --- Utility and Misc --- */
+.points-display {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    text-align: center;
+    border: 2px dashed var(--border-color);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.text-warning {
+    color: var(--warning-text) !important;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #60a5fa;
+        text-decoration: underline;
+    }
+
+footer {
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}

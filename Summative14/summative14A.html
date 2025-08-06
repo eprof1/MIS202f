@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--
+        PgP 8/3/2025 model AI feedback assignment case file, MIS362
+        Rebuilt by Gemini using only Bootstrap 5 classes for a "CSS Zen Garden" approach.
+        WCAG 2.1 compliance update.
+    -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MIS362 Case 01: The SmartBean Challenge (Bootstrap 5)</title>
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="bootstrap5.min.css" rel="stylesheet" >
+    
+    <!-- Bootstrap Icons for the accordion arrows -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- 
+        NOTE: The hero background image is the only inline style.
+        This is a common practice for content-specific images that aren't part of the overall theme,
+        and it's the most direct way to achieve this effect without a custom CSS file.
+    -->
+    <style>
+        .hero-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1559496417-e7f25cb247f3?q=80&w=2564&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+        }
+        
+        /* Custom styling for accordion button icon rotation */
+        .accordion-button::after {
+            display: none; /* Hide default Bootstrap icon */
+        }
+        .accordion-button .accordion-icon {
+            transition: transform 0.2s ease-in-out;
+        }
+        .accordion-button:not(.collapsed) .accordion-icon {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Hero Section -->
+    <header class="hero-banner p-5 text-center text-white border-bottom border-5 border-primary mb-4">
+        <div class="container">
+            <h1 class="display-3 fw-bold">MIS362 Case Challenge 01</h1>
+            <p class="lead">Unlocking Business Potential with Information Systems</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <form action="https://eprofessor.azurewebsites.net/codex/ProcessAICall.aspx" method="post" name="frmAssignment" id="frmAssignment">
+            <input name="InstID" type="hidden" id="InstID" value="00617282">
+
+            <!-- Student & Course Information Section -->
+            <section class="card mb-4">
+                <div class="card-body p-4">
+                    <h2 class="visually-hidden">Student and Course Information</h2>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <h3>Student Details</h3>
+                            <div class="mb-3"><label for="FirstName" class="form-label text-muted">First Name:</label><input class="form-control" name="FirstName" id="FirstName" type="text" readonly></div>
+                            <div class="mb-3"><label for="LastName" class="form-label text-muted">Last Name:</label><input class="form-control" name="LastName" id="LastName" type="text" readonly></div>
+                            <div class="mb-3"><label for="StarID" class="form-label text-muted">StarID:</label><input class="form-control" name="StarID" id="StarID" type="text" readonly></div>
+                            <div class="mb-3"><label for="email" class="form-label text-muted">Email:</label><input class="form-control" name="email" id="email" type="email" readonly></div>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Course Details</h3>
+                            <div class="mb-3"><label for="Semester" class="form-label text-muted">Semester:</label><input class="form-control" name="Semester" id="Semester" type="text" readonly></div>
+                            <div class="mb-3"><label for="Class" class="form-label text-muted">Class:</label><input class="form-control" name="Class" id="Class" type="text" readonly></div>
+                            <div class="mb-3"><label for="Section" class="form-label text-muted">Section:</label><input class="form-control" name="Section" id="Section" type="text" readonly></div>
+                            <div class="mb-3"><label for="assignment" class="form-label text-muted">Assignment:</label><input class="form-control" name="assignment" id="assignment" type="text" readonly value="Case01"></div>
+                        </div>
+                    </div>
+                    <input name="pin" id="pin" type="hidden">
+                </div>
+            </section>
+            
+            <div class="row my-4">
+                <div class="col-12">
+                    <button class="btn btn-primary bg-gradient btn-lg w-100 fw-bold" name="Submit" type="submit">Submit Your Work</button>
+                    <div class="p-3 mt-4 border border-secondary border-2 border-dashed rounded text-center h3 text-primary">Total Points: 250</div>
+                </div>
+            </div>
+
+            <!-- Accordion for Content Sections -->
+            <div class="accordion" id="assignmentAccordion">
+                <div class="accordion-item border-0 mb-3">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button bg-dark text-white fw-bold rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <span class="d-flex align-items-center"><i class="bi bi-bullseye me-2"></i>Learning Objectives</span>
+                            <i class="bi bi-chevron-right accordion-icon ms-auto"></i>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#assignmentAccordion">
+                        <div class="accordion-body card mt-2">
+                           <h3>Define the Field of Management Information Systems (MIS) and its Role in Organizations</h3>
+                            <ul>
+                                <li>MIS is the strategic bridge between business goals and technological solutions.</li>
+                                <li>Professionals in MIS design and manage the systems that empower businesses to leverage data.</li>
+                                <li>MIS is the central nervous system of modern organizations, supporting operations and innovation.</li>
+                                <li>It enables all departments to work in synergy, turning raw data into actionable intelligence.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border-0 mb-3">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed bg-dark text-white fw-bold rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <span class="d-flex align-items-center"><i class="bi bi-book-half me-2"></i>Mission-Critical Resources</span>
+                            <i class="bi bi-chevron-right accordion-icon ms-auto"></i>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#assignmentAccordion">
+                        <div class="accordion-body card mt-2">
+                            <h3>Your Tactical Toolkit</h3>
+                            <p>Deploy the course AI chatbots for advanced intelligence gathering:</p>
+                            <ul>
+                                <li>ChatGPT: <a href="https://chatgpt.com/g/g-CEy3QEewE-winsu-mis362chat">MIS362 Assistant</a></li>
+                                <li>Copilot: <a href="https://classes.winona.edu/PPaulson/ai/mis362.html">MIS AI Assistant</a></li>
+                            </ul>
+                            <hr>
+                            <p>Access the open-source textbooks in the professor's OneDrive ReadOnly folder. (Link available on D2L).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item border-0 mb-3">
+                    <h2 class="accordion-header" id="headingThree">
+                         <button class="accordion-button collapsed bg-dark text-white fw-bold rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                           <span class="d-flex align-items-center"><i class="bi bi-briefcase-fill me-2"></i>The Challenge: SmartBean Coffee</span>
+                           <i class="bi bi-chevron-right accordion-icon ms-auto"></i>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#assignmentAccordion">
+                        <div class="accordion-body card mt-2">
+                           <h3>High-Stakes Growth</h3>
+                            <p>SmartBean Coffee, a once-local gem, is now a national contender with over 80 stores. Their premium coffee is winning hearts, but their back-end operations are at a breaking point.</p>
+                            <p>The founder recognizes that their current system of spreadsheets and emails is a liability. She has hired you to architect the future. Your mission: explain Management Information Systems (MIS) and prove how it will revolutionize SmartBean's operations.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item border-0 mb-3">
+                    <h2 class="accordion-header" id="headingFour">
+                         <button class="accordion-button collapsed bg-dark text-white fw-bold rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <span class="d-flex align-items-center"><i class="bi bi-pencil-square me-2"></i>Your Mission & Submission</span>
+                            <i class="bi bi-chevron-right accordion-icon ms-auto"></i>
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#assignmentAccordion">
+                        <div class="accordion-body card mt-2">
+                            <h3>Exercise 01: The Strategic Analysis</h3>
+                            <p><strong>Your Primary Directive:</strong> What is Management Information Systems (MIS), and how can it forge a path to operational excellence and superior decision-making for a high-growth business like SmartBean Coffee?</p>
+                            <hr>
+                            <h5>Execution Protocol:</h5>
+                            <ol>
+                                <li>Leverage the MIS chatbot and other reliable intel to formulate your analysis.</li>
+                                <li>Synthesize your findings into a powerful 1-2 paragraph executive summary.</li>
+                                <li>Input your response into the secure communication channel below.</li>
+                                <li>Submit for immediate AI-driven feedback based on an advanced MIS rubric.</li>
+                                <li>Refine and resubmit until your analysis is flawless.</li>
+                            </ol>
+                            <div class="mb-3">
+                                <label for="a1" class="form-label"><strong>1. (100) Your Analysis:</strong></label>
+                                <textarea class="form-control" name="q1" hidden>What is Management Information Systems (MIS), and how can it help a growing business like SmartBean Coffee make better decisions and improve operations?</textarea>
+                                <textarea class="form-control" id="a1" name="a1" rows="5" placeholder="Compose your strategic analysis here..."></textarea>
+                            </div>
+                            <hr class="my-4">
+                            <h3>Exercise 02: After-Action Report</h3>
+                            <div class="mb-3">
+                                <label for="a2" class="form-label"><strong>2. (100) Post-analysis, what critical new insights have you gained regarding technology's role in scaling business intelligence for a company like SmartBean Coffee?</strong></label>
+                                <textarea class="form-control" name="q2" hidden>After researching MIS and writing your response, what new insights do you have about how technology supports decision-making in a growing business like SmartBean Coffee?</textarea>
+                                <textarea class="form-control" id="a2" name="a2" rows="5" placeholder="Record your reflections here..."></textarea>
+                            </div>
+                            <hr class="my-4">
+                            <h3>Final Submission Protocol</h3>
+                            <ol>
+                                <li><strong>(25) Homepage Link Verification:</strong> Ensure a hyperlink to this case file is active on your personal homepage.</li>
+                                <li><strong>(25) Final Submission:</strong> Hitting the "Submit" button transmits your responses to the AI Large Language Model (LLM) for evaluation.</li>
+                            </ol>
+                            <p class="text-warning"><strong>Important:</strong> Your answers are not saved in the browser. Draft longer responses in a separate text editor to prevent data loss.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr>
+            <div class="my-4">
+                <button class="btn btn-primary bg-gradient btn-lg w-100 fw-bold" name="Submit" type="submit">Finalize and Submit Mission</button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="container text-center mt-5 py-4 border-top">
+        <div id="licenseInfo" class="small text-body-secondary"></div>
+        <div id="footerText" class="small mt-2 text-body-secondary"></div>
+    </footer>
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Local JS files for data population -->
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+</body>
+</html>
