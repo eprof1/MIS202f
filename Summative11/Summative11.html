@@ -429,110 +429,95 @@
 
 
 
-        <div class="col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Jupyter Notebook</a></div>
+        <div class="col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Jupyter Lab</a></div>
 
 
         <div id="Exercise04" class="collapse in  col-lg-12">
 
             <p>Unlike event-driven apps, Jupyter programs execute sequentially, allowing you to observe how program state changes over time.</p>
 
-            <p>Installing and Using Jupyter Notebook</p>
+                <p class="text-primary">
+                    <strong>Goal:</strong> Open and run an existing <code>.ipynb</code> notebook using the standardized
+                    course environment created in <strong>Formative00 Part 4</strong>.
+                </p>
 
+                <p>
+                    <strong>Important:</strong> 
+                    Use <strong>Miniforge + Conda</strong> and launch <strong>JupyterLab</strong> from your course environment.
+                    This prevents “wrong Python / wrong pip” problems.
+                </p>
 
-            <p></p>
+                <hr />
 
-            <ol>
-                <li>Open PowerShell </li>
-                <li>Click Start → type PowerShell → open it</li>
-                <li>Install Jupyter Notebook:<br>
-                    <code>pip install notebook </code>
-                </li>
-                <li>When installation finishes, you are done</li>
-                <li>Start Jupyter </li>
-                <li><code>python -m notebook </code></li>
+                <h4>Step 1 — Download the notebook from the MIS202_ReadOnly OneDrive folder available in D2L</h4>
+                <ol>
+                    <li>Open the course shared OneDrive read-only folder provided by your instructor.</li>
+                    <li>Download: <code>MIS202Ex4.ipynb</code></li>
+                    <li>Save it to your local notebook folder:</li>
+                </ol>
 
-            </ol>
+                <p><code>C:\Users\&lt;StarID&gt;\WSU_MIS\notebooks</code></p>
 
+                <hr />
 
+                <h4>Step 2 — Launch JupyterLab from the correct environment</h4>
+                <ol>
+                    <li>Open <strong>Miniforge Prompt</strong>.</li>
+                    <li>Activate the base environment:</li>
+                </ol>
 
+<pre><code>conda activate wsu_mis_base</code></pre>
 
+                <ol start="3">
+                    <li>Start JupyterLab:</li>
+                </ol>
 
+<pre><code>jupyter lab</code></pre>
 
+                <hr />
 
-            <h3 data-end="1185" data-start="1163">Using Jupyter Notebook</h3>
-            <ul data-end="1337" data-start="1187">
-                <li data-end="1223" data-start="1187">
-                    <p data-end="1223" data-start="1189">
-                        Click the <code data-end="1207" data-start="1199">.ipynb</code> file to open it
-                    </p>
-                </li>
-                <li data-end="1296" data-start="1224">
-                    <p data-end="1242" data-start="1226">
-                        Run a code cell:
-                    </p>
-                    <ul data-end="1296" data-start="1245">
-                        <li data-end="1268" data-start="1245">
-                            <p data-end="1268" data-start="1247">
-                                Click inside the cell
-                            </p>
-                        </li>
-                        <li data-end="1296" data-start="1271">
-                            <p data-end="1296" data-start="1273">
-                                Press <strong data-end="1296" data-start="1279">Shift + Enter</strong>
-                            </p>
-                        </li>
-                    </ul>
-                </li>
-                <li data-end="1337" data-start="1297">
-                    <p data-end="1337" data-start="1299">
-                        Output appears directly below the code
-                    </p>
-                </li>
-            </ul>
-            <p data-end="1401" data-start="1339">
-                This is intentional: <strong data-end="1400" data-start="1360">code + output together form evidence</strong>.
-            </p>
-            <br />
-            <br />
-            <h3>Troubleshooting</h3>
+                <h4>Step 3 — Open and run the notebook</h4>
+                <ol>
+                    <li>In JupyterLab, open <code>MIS202Ex4.ipynb</code> from:</li>
+                </ol>
 
+                <p><code>C:\Users\&lt;StarID&gt;\WSU_MIS\notebooks</code></p>
 
-            <h3 data-end="1711" data-start="1684">If Something Goes Wrong</h3>
-            <ul data-end="1837" data-start="1713">
-                <li data-end="1736" data-start="1713">
-                    <p data-end="1736" data-start="1715">
-                        Close the browser tab
-                    </p>
-                </li>
-                <li data-end="1759" data-start="1737">
-                    <p data-end="1759" data-start="1739">
-                        Return to PowerShell
-                    </p>
-                </li>
-                <li data-end="1780" data-start="1760">
-                    <p data-end="1780" data-start="1762">
-                        Press <strong data-end="1780" data-start="1768">Ctrl + C&nbsp; </strong>(will stop Notebook)
-                    </p>
-                </li>
-                <li data-end="1837" data-start="1781">
-                    <p data-end="1796" data-start="1783">
-                        Restart with:
-                    </p>
-                    <pre class="overflow-visible! px-0!" data-end="1837" data-start="1799"></pre>
-                    <div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary">
-                        <div class="@w-xl/main:top-9 sticky top-[calc(--spacing(9)+var(--header-height))]">
-                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
-                                <div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="overflow-y-auto p-4" dir="ltr">
-                            <code class="whitespace-pre! language-powershell"><span>python -m notebook</span></code>
-                        </div>
-                    </div>
-                    <pre></pre>
-                </li>
-            </ul>
+                <ol start="2">
+                    <li>Confirm the notebook kernel is <strong>WSU MIS Base (wsu_mis_base)</strong> (top-right of JupyterLab).</li>
+                    <li>Run the notebook cells using <strong>Shift + Enter</strong>.</li>
+                    <li>Follow the notebook directions exactly. (Order matters.)</li>
+                </ol>
+
+                <p class="text-muted">
+                    Reminder: Notebooks keep “state.” If you change code in an earlier cell but do not re-run it,
+                    later cells will still use the old value.
+                </p>
+
+                <hr />
+
+                <h4>Step 4 — Shut down correctly</h4>
+                <ol>
+                    <li>In JupyterLab, save your notebook (Ctrl+S).</li>
+                    <li>Close the browser tab.</li>
+                    <li>In the <strong>Miniforge Prompt</strong> window, press <strong>Ctrl + C</strong> and then type <strong>y</strong> to shut down the server.</li>
+                </ol>
+
+                <hr />
+
+                <p>
+                    <strong>Evidence (Screenshot Ex04)</strong><br>
+                    Take a screenshot that clearly shows:
+                </p>
+                <ul>
+                    <li>JupyterLab open with <code>MIS202Ex4.ipynb</code> visible</li>
+                    <li>At least one code cell and its output</li>
+                    <li>The kernel showing <strong>WSU MIS Base (wsu_mis_base)</strong></li>
+                </ul>
+
+                <p>
+                    Add the screenshot to your OneNote artifact using the required naming convention for this assignment.
+                </p>
 
 
             <br />
@@ -541,7 +526,7 @@
 
             <p>Your browser will open to Jupyter as shown below, follow the instructions</p>
 
-            <img src="images/JupyterNotebook.png" class="img-fluid img-responsive img-rounded" alt="running Jupyter" />
+            <img src="images/JupyterLab.png" class="img-fluid img-responsive img-rounded" alt="running Jupyter" />
 
             <br />
             <br />
