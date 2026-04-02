@@ -4,7 +4,6 @@
 <head>
 
     <!--
-        PgP 4/2/2026  this version uses colab instead of Jupyter lab to minimize student workload
         PgP 12/28/2025 updated to use jupyter lab instead of App Inventor2 for coding
         PgP 5/28/2025 update to html and javascript to coincide with best coding practices
         Formative00 split into 3 separate html files instead of using tabs, too unwieldly
@@ -431,45 +430,62 @@
 
 
 
-        <div class="col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Google Colab</a></div>
+        <div class="col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Jupyter Lab</a></div>
 
 
         <div id="Exercise04" class="collapse in  col-lg-12">
 
-            <p>Unlike event-driven apps, Colab programs execute sequentially, allowing you to observe how program state changes over time.</p>
+            <p>Unlike event-driven apps, Jupyter programs execute sequentially, allowing you to observe how program state changes over time.</p>
 
                 <p class="text-primary">
-                    <strong>Goal:</strong> Open and run an existing <code>.ipynb</code> notebook using <strong>Google Colab</strong>.
+                    <strong>Goal:</strong> Open and run an existing <code>.ipynb</code> notebook using the standardized
+                    course environment created in <strong>Formative00 Part 4</strong>.
                 </p>
 
+                <p>
+                    <strong>Important:</strong> 
+                    Use <strong>Miniforge + Conda</strong> and launch <strong>JupyterLab</strong> from your course environment.
+                    This prevents “wrong Python / wrong pip” problems.
+                </p>
 
                 <hr />
 
-                <h4>Step 1 — Open Browser</h4>
+                <h4>Step 1 — Download the notebook from the MIS202_ReadOnly OneDrive folder available in D2L</h4>
                 <ol>
-                    <li>Browse to  <a href="https://colab.google.com" target="_blank">https://colab.google.com </a> </li>
+                    <li>Open the course shared OneDrive read-only folder provided by your instructor.</li>
+                    <li>Download: <code>MIS202Ex4.ipynb</code></li>
+                    <li>Save it to your local notebook folder:</li>
                 </ol>
+
+                <p><code>C:\Users\&lt;StarID&gt;\WSU_MIS\notebooks</code></p>
 
                 <hr />
 
-                <h4>Step 2 — Upload File</h4>
+                <h4>Step 2 — Launch JupyterLab from the correct environment</h4>
                 <ol>
-                    <li>Go to the OneDrive MIS202_ReadOnly folder for this course-see link on D2L course home page.</li>
-                    <li>Download <code>Python/MIS202Ex4.ipynb </code></li>
-                    <li>Upload this file to Colab</li>
+                    <li>Open <strong>Miniforge Prompt</strong>.</li>
+                    <li>Activate the base environment:</li>
                 </ol>
 
+<pre><code>conda activate wsu_mis_base</code></pre>
+
+                <ol start="3">
+                    <li>Start JupyterLab:</li>
+                </ol>
+
+<pre><code>jupyter lab</code></pre>
 
                 <hr />
 
                 <h4>Step 3 — Open and run the notebook</h4>
                 <ol>
-                    <li>In Colab, make sure to open <code>MIS202Ex4.ipynb</code> </li>
+                    <li>In JupyterLab, open <code>MIS202Ex4.ipynb</code> from:</li>
                 </ol>
 
+                <p><code>C:\Users\&lt;StarID&gt;\WSU_MIS\notebooks</code></p>
 
                 <ol start="2">
-                    <li>The notebook kernel is not <strong>WSU MIS Base (wsu_mis_base)</strong> an error will appear, disregard it.</li>
+                    <li>Confirm the notebook kernel is <strong>WSU MIS Base (wsu_mis_base)</strong> (top-right of JupyterLab).</li>
                     <li>Run the notebook cells using <strong>Shift + Enter</strong>.</li>
                     <li>Follow the notebook directions exactly. (Order matters.)</li>
                 </ol>
@@ -483,8 +499,9 @@
 
                 <h4>Step 4 — Shut down correctly</h4>
                 <ol>
-                    <li>In Colab, save your notebook (Ctrl+S).</li>
+                    <li>In JupyterLab, save your notebook (Ctrl+S).</li>
                     <li>Close the browser tab.</li>
+                    <li>In the <strong>Miniforge Prompt</strong> window, press <strong>Ctrl + C</strong> and then type <strong>y</strong> to shut down the server.</li>
                 </ol>
 
                 <hr />
@@ -494,8 +511,9 @@
                     Take a screenshot that clearly shows:
                 </p>
                 <ul>
-                    <li>Colab open with <code>MIS202Ex4.ipynb</code> visible</li>
+                    <li>JupyterLab open with <code>MIS202Ex4.ipynb</code> visible</li>
                     <li>At least one code cell and its output</li>
+                    <li>The kernel showing <strong>WSU MIS Base (wsu_mis_base)</strong></li>
                 </ul>
 
                 <p>
@@ -505,11 +523,11 @@
 
             <br />
             <br />
-            <h3>Use Colab to Complete Exercise 4</h3>
+            <h3>Use Jupyter to Complete Exercise 4</h3>
 
-            <p>When you open your browser Colab as shown below, and follow the instructions, below is the expected output.</p>
+            <p>Your browser will open to Jupyter as shown below, follow the instructions</p>
 
-            <img src="images/JupyterLab.png" class="img-fluid img-responsive img-rounded" alt="running Colab" />
+            <img src="images/JupyterLab.png" class="img-fluid img-responsive img-rounded" alt="running Jupyter" />
 
             <br />
             <br />
@@ -517,7 +535,7 @@
 
 
             <p>
-                <strong>(50)</strong> 6. What happens if you change a value in an earlier Colab cell and re-run later cells without restarting the notebook?<br />
+                <strong>(50)</strong> 6. What happens if you change a value in an earlier Jupyter cell and re-run later cells without restarting the notebook?<br />
 
                 <!-- Enter your answer in the VALUE field below   GROK -->
                 <input type="text" name="q6" id="q6" size="120" maxlength="120" class="form-control" value="change value: " />
@@ -535,7 +553,7 @@
 
 
             <p>
-                <strong>(150)</strong> 8. Make a screenshot showing the a Colab Notebook code cell and its output.<br />
+                <strong>(150)</strong> 8. Make a screenshot showing the a Jupyter Notebook code cell and its output.<br />
 
                 Save the screenshot  as &quot;Ex4&quot; in your OneNote Page.<br />
                 Below each screenshot, add one sentence explaining what the output demonstrates about how the program works.
