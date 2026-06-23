@@ -1,3 +1,8 @@
+PgP 6/22/2026
+* updated nwid -network username for studentwebs link
+* adding OneNote as week 1 assignment
+
+
 PgP 7/28/2025
 * revised Summative assignment structure, improve javascript code, avoid race conditions, simplify html
 * split constants out from code in js
